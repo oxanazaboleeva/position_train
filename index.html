@@ -7,42 +7,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
     <link rel="stylesheet" href="normalize.css">
     <style>
-        .flexconteiner1 {
+        p,
+        header,
+        main,
+        aside,
+        footer {
+            border: 1px solid black
+        }
+
+        header,
+        footer {
+            flex: 0 0 content;
+            text-align: center;
+        }
+
+        body {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            display: flex;
             flex-direction: row;
-            align-items: flex-end;
+            justify-content: space-between;
             flex-wrap: wrap;
-            border: 1px solid black;
-            width: 50%;
-            height: 300px;
+            align-items: flex-end;
+            width: 100vh;
+            height: 500px;
         }
 
-        .flexconteiner2 {
+        aside {
             display: flex;
-            align-self: flex-end;
-            justify-content: center;
-            width: 50%;
-            height: 300px;
-            border: 1px solid black
+            flex-shrink: 1;
+            flex-direction: column;
+            justify-content: stretch;
+            width: 100vh;
+            height: 500px;
         }
 
-        .flexconteiner3 {
-            display: flex;
+        footer {
+            display: inline-flex;
             flex-direction: row;
             justify-content: space-between;
-            border: 1px solid black
         }
     </style>
 </head>
 
-<body>
-    <header style="text-align: center;">
+<body class="body">
+    <header class="header">
         <h1>Шапка</h1>
     </header>
-    <div class="flexconteiner1">
-        <p>
-        <h2>Основная часть</h2>
+    <main class="main">
         </p>
         <p>
         <h2>Часть 1</h2>
@@ -53,24 +69,25 @@
         <p>
         <h2>Часть 3</h2>
         </p>
-    </div>
-    <div class="flexconteiner2">
-        <h2>Боковая часть</h2>
-    </div>
-    <fotter class="flexconteiner3">
-        <p>
-        <h3>Секция 1</h3>
-        </p>
-        <p>
-        <h3>Секция 2</h3>
-        </p>
-        <p>
-        <h3>Секция 3</h3>
-        </p>
-        <p>
-        <h3>Секция 4</h3>
-        </p>
-    </fotter>
+    </main>
+    <aside class="aside">
+        <h1>Боковая часть</h1>
+    </aside>
 </body>
+<footer class="footer">
+    <p>
+    <h3>Секция 1</h3>
+    </p>
+    <p>
+    <h3>Секция 2</h3>
+    </p>
+    <p>
+    <h3>Секция 3</h3>
+    </p>
+    <p>
+    <h3>Секция 4</h3>
+    </p>
+</footer>
+
 
 </html>
